@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -5,69 +7,13 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
 	<div class="container" id="container">
         <!-- JavaScript will add the 800 square boxes here -->
     </div>
+	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
 </script>
 
 </body>
 
 </html>
-
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    margin: 0;
-	background: black;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(25, 20px);
-    gap: 5px;
-}
-
-.square {
-    width: 20px;
-    height: 20px;
-    background-color: #333; /* Dark gray by default */
-    transition: background-color 1s ease; /* Smooth transition on hover */
-}
-
-
-const container = document.getElementById('container');
-
-// Function to generate a random color
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-// Create 800 squares with different hover colors
-for (let i = 0; i < 800; i++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-
-    square.addEventListener('mouseover', () => {
-        const randomColor = getRandomColor();
-        square.style.backgroundColor = randomColor; // Change to a random background color on hover
-    });
-
-    square.addEventListener('mouseout', () => {
-        // Reset the background color after 1 second
-        setTimeout(() => {
-            square.style.backgroundColor = '#333'; // Reset to the default dark gray color
-        }, 1000); // 1000 milliseconds = 1 second
-    });
-
-    container.appendChild(square);
-}
