@@ -17,6 +17,6 @@ body {
 .square {
     width: 20px;
     height: 20px;
-    background-color: (29,29,29); /* Dark gray by default */
+    background-color: rgb(29,29,29); /* Dark gray by default */
     transition: background-color 1s ease; /* Smooth transition on hover */
 }
